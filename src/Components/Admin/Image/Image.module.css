@@ -9,4 +9,11 @@
     height: 100%;
     box-sizing: border-box;
     object-fit: cover;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.Image img:hover {
+    transform: scale(1.07);
+    overflow: hidden;
 }
