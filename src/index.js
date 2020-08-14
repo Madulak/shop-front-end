@@ -3,11 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk';
+
+import authReducer from './store/reducers/auth';
+import productReducer from './store/reducers/products'
+
+const rootReducer = combineReducers({
+  auth: authReducer,
+  product: productReducer
+})
+
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+    </BrowserRouter>
+  </Provider>
+  ,
   document.getElementById('root')
 );
 

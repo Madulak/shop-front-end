@@ -1,0 +1,23 @@
+.Addproducts {
+    flex: 4;
+    width: 100%;
+    
+}
+
+.Addproducts .Form {
+    width: 30rem;
+    margin: auto;
+    
+}
+
+.Addproducts .Form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.Addproducts .Form form input {
+    margin: 10px 0;
+}

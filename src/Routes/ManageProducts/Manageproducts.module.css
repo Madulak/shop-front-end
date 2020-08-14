@@ -1,0 +1,49 @@
+.Manageproducts {
+    flex: 4;
+}
+
+.Manageproducts .Products {
+    display: flex;
+}
+
+.Manageproducts .Products .Product {
+    margin: 5px;
+    box-shadow: 0 2px 4px black;
+    padding: 20px 10px;
+    width: 15rem
+}
+
+.Manageproducts .Products .Product:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 7px black;
+}
+
+.Manageproducts .Products .Product .Title {
+    text-align: center;
+    font-family: sans-serif;
+    opacity: 0.6;
+}
+
+.Manageproducts .Products .Product p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.7;
+}
+
+.Manageproducts .Products .Product .Buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Manageproducts .Products .Product span {
+    color: grey;
+    font-size: 11px;
+}
+
+.Manageproducts .Products .Product button {
+    background-color: rgb(181, 240, 181);
+    padding: 5px;
+    border-radius: 10px;
+    width: 5rem;
+}

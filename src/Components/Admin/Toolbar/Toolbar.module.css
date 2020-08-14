@@ -1,0 +1,19 @@
+.Toolbar {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: rgb(250, 250, 250);
+    height: 100%;
+    padding: 0 2rem;
+}
+
+.Toolbar .BrandName {
+    display: flex;
+    flex-direction: column;
+}
+
+.Toolbar .Link {
+    font-size: 1.5rem;
+    color: grey;
+    text-decoration: none;
+}

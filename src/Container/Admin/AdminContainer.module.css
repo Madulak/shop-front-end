@@ -1,0 +1,9 @@
+.AdminContainer {
+    display: flex;
+    height: 100vh;
+}
+
+.Children {
+    flex: 4;
+    height: 100%;    
+}
