@@ -7,7 +7,7 @@ import Newsletter from '../../Components/User/Newsletter/Newsletter';
 const Usercontainer = (props) => {
 
     return (
-        <div className={classes.Usercontainer}>
+        <div style={props.style} className={classes.Usercontainer}>
             <Toolbar />
             {props.children}
             <Newsletter />

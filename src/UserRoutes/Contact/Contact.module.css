@@ -1,0 +1,21 @@
+.Contact {
+    padding: 1rem;
+}
+
+.Contact .ContactInfo {
+    display: flex;
+    justify-content: center;
+}
+
+.Contact .ContactInfo .Form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.Contact .ContactInfo .Form form span {
+    color: rgb(219, 83, 83);
+}
+
+.Contact .ContactInfo .Form form input {
+    margin: 10px 0;
+}

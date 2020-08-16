@@ -10,9 +10,10 @@ import Signup from './Components/Admin/Auth/Signup';
 import Login from './Components/Admin/Auth/Login';
 
 import Shop from './UserRoutes/Shop/Shop';
+import ProductDetail from './UserRoutes/ProductDetails/Productdetails';
+import Contact from './UserRoutes/Contact/Contact';
 
 const App = () => {
-
   
   return (
     <div className={classes.App}>
@@ -25,6 +26,8 @@ const App = () => {
         <Route exact path="/admin/edit-product/:id" component={EditProduct} />
 
         <Route exact path="/shop" component={Shop} />
+        <Route exact path="/shop/:id" component={ProductDetail} />
+        <Route exact path="/contact" component={Contact} />
       </Switch>
     </div>
   );

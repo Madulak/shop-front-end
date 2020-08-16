@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Image from '../../Components/Admin/Image/Image';
 
-const Shop = () => {
+const Shop = (props) => {
 
     const url = 'http://localhost:8080/'
     const dispatch = useDispatch();
@@ -21,7 +21,9 @@ const Shop = () => {
 
     },[products])
 
-    console.log(products)
+    const productDetailHandler = (id) => {
+        props.history.push('/shop/'+id)
+    }
 
     return (
         <Container>
@@ -29,7 +31,7 @@ const Shop = () => {
 
                 <div className={classes.Products}>
                     {!products ? 'Loading...' : products.map(key => (
-                        <div className={classes.Product} key={key._id}>
+                        <div onClick={() => productDetailHandler(key._id)} className={classes.Product} key={key._id}>
                             <Image className={classes.Image} imageUrl={url+key.imageUrl} />
                             <div className={classes.ProductDetails}>
                                 <p className={classes.Title}>{key.title}</p>

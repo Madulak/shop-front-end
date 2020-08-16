@@ -1,0 +1,28 @@
+.Productdetails {
+    padding: 1rem 3rem;
+
+}
+
+.Productdetails .Product {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Productdetails .Product .Image {
+    width: 25rem;
+}
+
+.Productdetails .Product .Image img {
+    width: 20rem;
+}
+
+.Productdetails .Product .Form form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.Productdetails .Product .Form form input {
+    margin: 10px 0;
+}
+
