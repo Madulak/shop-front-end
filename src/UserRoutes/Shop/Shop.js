@@ -6,6 +6,8 @@ import * as productActions from '../../store/actions/userActions/productActions'
 import { useDispatch, useSelector } from 'react-redux';
 
 import Image from '../../Components/Admin/Image/Image';
+import { NavLink } from 'react-router-dom';
+import Newsletter from '../../Components/User/Newsletter/Newsletter';
 
 const Shop = (props) => {
 
@@ -28,6 +30,12 @@ const Shop = (props) => {
     return (
         <Container>
             <div className={classes.Shop}>
+                <div className={classes.Categories}>
+                    <span>All </span> |
+                    <span>Top </span> |
+                    <span>bottom </span> |
+                    <span>Dress</span>
+                </div>
 
                 <div className={classes.Products}>
                     {!products ? 'Loading...' : products.map(key => (

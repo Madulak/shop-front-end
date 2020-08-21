@@ -12,8 +12,23 @@
     width: 25rem;
 }
 
+.Productdetails .Product .ProductDetail {
+    width: 25rem;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
 .Productdetails .Product .Image img {
     width: 20rem;
+    object-fit: cover;
+    box-sizing: border-box;
+    
+}
+
+.Productdetails .Product .Form {
+    width: 100%;
+    box-sizing: border-box;
+    /* background: linear-gradient(20% black 80% red); */
 }
 
 .Productdetails .Product .Form form {
@@ -26,3 +41,31 @@
     margin: 10px 0;
 }
 
+.Productdetails .Product .Form form select {
+    margin: 5px 0;
+    border: 1px solid grey;
+    background-color: transparent;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.Productdetails .Product .Form form button {
+    border: 1px solid grey;
+    height: 2rem;
+    background-color: rgb(224, 224, 224);
+}
+
+.Productdetails .Product .Form form button:hover {
+    cursor: pointer;
+    background-color: rgb(161, 161, 161);
+    transition: 0.3s ease-in-out;
+}
+
+.Productdetails .Product .Form form label {
+    margin: 5px 0;
+}
+
+.Productdetails .CartButtons {
+    display: flex;
+    justify-content: space-between;
+}

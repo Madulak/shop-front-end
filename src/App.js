@@ -12,6 +12,7 @@ import Login from './Components/Admin/Auth/Login';
 import Shop from './UserRoutes/Shop/Shop';
 import ProductDetail from './UserRoutes/ProductDetails/Productdetails';
 import Contact from './UserRoutes/Contact/Contact';
+import Cart from './UserRoutes/Cart/Cart';
 
 const App = () => {
   
@@ -28,6 +29,7 @@ const App = () => {
         <Route exact path="/shop" component={Shop} />
         <Route exact path="/shop/:id" component={ProductDetail} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/cart" component={Cart} />
       </Switch>
     </div>
   );

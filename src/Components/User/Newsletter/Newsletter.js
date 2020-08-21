@@ -7,11 +7,12 @@ const Newsletter = () => {
         <div className={classes.Newsletter}>
             <div>
                 <h3>Socials</h3>
-                <p>Sign up to Receive</p>
+                <p>Sign up for Weekly updates</p>
             </div>
-            <div>
-            <form>
-                <input type='email' />
+
+            <div className={classes.Form}>
+                <form>
+                    <input type='email' />
                     <button>Sign up</button>
                 </form>
             </div>

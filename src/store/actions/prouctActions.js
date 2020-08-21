@@ -17,13 +17,13 @@ export const create_product = (formData) => {
         const token = getState().auth.token;
         console.log(token);
 
-        const config = { 
-            headers: {
-                'content-type': 'multipart/form-data',
-                Authorization: 'Bearer '+token
-            }
-        }
         try {
+            const config = { 
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    Authorization: 'Bearer '+token
+                }
+            }
             const response = await Axios.post(urlcreateProduct, formData, config)
             console.log(response);
         } catch (err) {

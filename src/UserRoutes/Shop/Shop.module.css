@@ -3,6 +3,18 @@
     position: relative;
 }
 
+.Shop .Categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.Shop .Categories span {
+    margin: 0 5px;
+    padding: 5px;
+}
+
 .Shop .Products {
     display: flex;
     position: relative;

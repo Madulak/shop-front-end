@@ -1,0 +1,19 @@
+.Cart {
+    padding: 0 10px;
+}
+
+.Cart .CheckoutContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Cart .CartItems {
+    display: flex;
+}
+
+.Cart .Image img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: contain;
+}

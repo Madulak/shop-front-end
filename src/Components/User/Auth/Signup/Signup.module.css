@@ -1,12 +1,50 @@
 .Signup {
-    padding: 10px;
+    padding: 1rem;
     background-color: white;
     margin-top: -15rem;
     transition: 2s ease-in-out;
+    border-radius: 5px;
 }
 
 .Signup .Form form {
     display: flex;
     flex-direction: column;
     line-height: 3rem;
+}
+
+.Signup .Form form input {
+    border: 1px solid grey;
+    height: 2rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Signup .Form form button {
+    border: 1px solid grey;
+    background-color: transparent;
+    border-radius: 5px;
+    height: 2rem;
+    background-color: rgb(170, 170, 170);
+}
+
+.Signup .Form form button:hover {
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.Signup .Form .Switch {
+    background-color: rgb(214, 214, 214);
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.Signup .Form .Switch:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: 1px solid rgb(243, 222, 222);
+    transition: 0.4s ease-in-out;
 }

@@ -37,7 +37,7 @@ const Manageproducts = React.memo((props) => {
                 <h3>Manage Products</h3>
                 <div className={classes.Products}>
                     {products.map(key => (
-                        <div onClick={() => editProductHandler(key._id)} className={classes.Product} key={key._id}>
+                        <div  className={classes.Product} key={key._id}>
                             <p className={classes.Title}>{key.title}</p>
                             <Image imageUrl={urlImage+key.imageUrl} alt={key.title} />
                             <p><span>price: </span>R {key.price}.00</p>

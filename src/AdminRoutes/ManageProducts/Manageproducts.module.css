@@ -4,6 +4,7 @@
 
 .Manageproducts .Products {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .Manageproducts .Products .Product {

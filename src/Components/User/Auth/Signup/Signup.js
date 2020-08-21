@@ -31,13 +31,14 @@ const Signup = (props) => {
     return (
         <div className={classes.Signup}>
             <div className={classes.Form}>
+                <h3>Sign up</h3>
                 <form onSubmit={onSignupHandler}>
                     <input type='email' value={email} onChange={event => setEmail(event.target.value)} placeholder='Enter Email' />
                     <input type='password' value={password} onChange={event => setPassword(event.target.value)} placeholder='Enter Password' />
                     <input type='password' value={confirm} onChange={event => setConfirm(event.target.value)} placeholder='Confirm Password' />
                     <button type='submit'>Sign up</button>
                 </form>
-                <p>Already Have an Account I want to <button onClick={props.click}>Login</button></p>
+                <p>Already Have an Account I want to <button className={classes.Switch} onClick={props.click}>Login</button></p>
             </div>
         </div>
     );

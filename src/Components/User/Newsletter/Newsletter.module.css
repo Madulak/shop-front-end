@@ -6,3 +6,15 @@
     height: auto;
     flex-direction: column; 
 }
+
+.Newsletter .Form form input {
+    border: 1px solid black;
+    height: 2rem;
+}
+
+.Newsletter .Form form button {
+    height: 2.25rem;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}

@@ -1,12 +1,50 @@
 .Login {
-    padding: 10px;
+    padding: 1rem;
     background-color: white;
     margin-top: -15rem;
-    
+    transition: 2s ease-in-out;
+    border-radius: 5px;
 }
 
 .Login .Form form {
     display: flex;
     flex-direction: column;
     line-height: 3rem;
+}
+
+.Login .Form form input {
+    border: 1px solid grey;
+    height: 2rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Login .Form form button {
+    border: 1px solid grey;
+    background-color: transparent;
+    border-radius: 5px;
+    height: 2rem;
+    background-color: rgb(170, 170, 170);
+}
+
+.Login .Form form button:hover {
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.Login .Form .Switch {
+    background-color: rgb(214, 214, 214);
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.Login .Form .Switch:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: 1px solid rgb(243, 222, 222);
+    transition: 0.4s ease-in-out;
 }

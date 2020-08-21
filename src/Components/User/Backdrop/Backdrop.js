@@ -5,7 +5,7 @@ const Backdrop = (props) => {
 
     return (
         <div  className={classes.Backdrop}>
-            <div className={classes.Close} onClick={props.click} >X</div>
+            <div className={classes.Close} onClick={props.backdrop} >x</div>
             {props.children}
         </div>
     );

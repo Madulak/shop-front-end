@@ -18,7 +18,7 @@ export const login = (loginData) => {
             console.log(error);
         }
 
-        dispatch({type: LOGIN })
+        dispatch({type: LOGIN, token: response.data.token, userId: response.data.userId })
     }
 }
 
