@@ -13,34 +13,25 @@ const Addproducts = React.memo(() => {
     const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState();
-    const [quantity, setQuantity] = useState();
+    const [type, setType] = useState('top');
 
     const dispatch = useDispatch();
     
     const onSubmitHandler = useCallback((event) => {
         event.preventDefault();
-        
 
-        
-        // const productDetails = {
-        //     title: title,
-        //     description: description,
-        //     price: price,
-        //     quantity: quantity,
-        //     imageUrl: image
-        // }
         let formData = new FormData();
         formData.append('image', image);
         formData.set('title', title);
         formData.set('description', description);
         formData.set('price', price);
-        formData.set('quantity', quantity);
+        formData.set('type', type);
         
         console.log(formData);
         
 
         dispatch(actionTypes.create_product(formData))
-    },[dispatch, title, image, description, price,quantity])
+    },[dispatch, title, image, description, price])
 
     useEffect(() => {
         
@@ -55,11 +46,20 @@ const Addproducts = React.memo(() => {
                     <form onSubmit={onSubmitHandler} encType='multipart/form-data'>
                         <input type='text' placeholder='title of the Product' value={title} onChange={event => setTitle(event.target.value)} />
                         <input type="file" onChange={event => setImage(event.target.files[0])} />
+                        
+                        <select onChange={(event) => setType(event.target.value)}>
+                            <option value='top'>Top</option>
+                            <option value='bottom'>Bottom</option>
+                            <option value='dress'>Dress</option>
+                        </select>
+                        
                         <textarea value={description} onChange={event => setDescription(event.target.value)} maxLength='150' rows='6' cols='30' placeholder="Description"></textarea>
+                        
                         <input type='number' placeholder='Enter price' value={price} onChange={event => setPrice(event.target.value)} />
-                        <input type='number' placeholder='Enter quantity' value={quantity} onChange={event => setQuantity(event.target.value)} />
+                        
+                        
                         <div>
-                            <button >Submit</button>
+                            <button type='submit'>Submit</button>
                             <button type='reset'>Cancel</button>
                         </div>
                     </form>

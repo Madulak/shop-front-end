@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Toolbar.module.css';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Toolbar = () => {
+
+    const isAuth = useSelector(state => state.userAuth.token);
 
     return (
         <div className={classes.Toolbar}>
             <div>
-                <NavLink to="/shop">Shop</NavLink>
-                <NavLink to="/about">About</NavLink>
-                <NavLink to="/contact">Contact</NavLink>
-                <NavLink to="/cart">Cart</NavLink>
+                <NavLink className={classes.Link} to="/shop">Shop</NavLink>
+                <NavLink className={classes.Link} to="/about">About</NavLink>
+                <NavLink className={classes.Link} to="/contact">Contact</NavLink>
+                {isAuth ? <NavLink className={classes.Link} to="/cart">Cart</NavLink> : ''}
             </div>
             <div>
                 <h3><NavLink to="/">Shop</NavLink></h3>

@@ -1,0 +1,37 @@
+.Home {
+    padding: 0 5rem;
+}
+
+.Home .NewIn {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0;
+}
+
+.Home .NewIn .ShopNow {
+    background-color: gray;
+    padding: .0rem .6rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.Home .Shop {
+    display: flex;
+    justify-content: center;
+}
+
+.Home .Shop .Product {
+    margin: 0 1rem;
+}
+
+.Home .Shop .Product .Image {
+    width: 15rem;
+}
+
+.Home .Shop .Product .Image img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}

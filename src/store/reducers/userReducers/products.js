@@ -1,10 +1,11 @@
 import { GET_SINGLE_PRODUCT } from "../../actions/prouctActions"
 
-const { ALL_PRODUCTS } = require("../../actions/userActions/productActions")
+const { ALL_PRODUCTS, GET_THREE, GET_TOP, GET_BOTTOM, GET_DRESS } = require("../../actions/userActions/productActions")
 
 const initialState = {
     products: [],
-    product: {}
+    product: {},
+    product3: [],
 }
 
 const productReducer = (state = initialState, action) => {
@@ -21,6 +22,32 @@ const productReducer = (state = initialState, action) => {
                 ...state,
                 product: action.product
             }
+        case GET_THREE:
+            return {
+                ...state,
+                product3: action.product3
+            }
+
+        case GET_TOP: {
+            return {
+                ...state,
+                products: action.top
+            }
+        }
+
+        case GET_BOTTOM: {
+            return {
+                ...state,
+                products: action.bottom
+            }
+        }
+
+        case GET_DRESS: {
+            return {
+                ...state,
+                products: action.dress
+            }
+        }
             
         default: 
             return state

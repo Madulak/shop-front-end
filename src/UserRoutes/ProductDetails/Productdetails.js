@@ -21,14 +21,14 @@ const Productdetails = (props) => {
     const [isLogin, setIsLogin] = useState(true);
     const [isCart, setIsCart] = useState(false);
     const [size, setSize] = useState('');
-    const [quantity, setQuantity] = useState(1);
+    // const [quantity, setQuantity] = useState(1);
     
     const isToken = useSelector(state => state.userAuth.token);
     const product = useSelector(state => state.userProduct.product);
 
     useEffect(() => {
         dispatch(productActions.get_single_product(productId));
-    },[isToken])
+    },[isToken,isCart,backdrop])
 
     console.log(isToken)
 
@@ -36,12 +36,10 @@ const Productdetails = (props) => {
         event.preventDefault();
         if (isToken !== null) {
             setIsCart(true);
-            if(isCart) {
-                setBackdrop(state => !state);
-            }
+            setBackdrop(false);
+            
             const cartData = {
                 productId: productId,
-                quantity: quantity,
                 size: size
             }
             dispatch(cartActions.add_to_cart(cartData))
@@ -96,10 +94,10 @@ const Productdetails = (props) => {
                                     <option>Select Size</option>
                                     <option value='small'>Small</option>
                                     <option value='medium'>Medium</option>
-                                    <option value='large'>large</option>
+                                    <option value='large'>Large</option>
                                 </select>
-                                <label>Quantity</label>
-                                <input type='number' min='1' max='10' value={quantity} onChange={event => setQuantity(event.target.value)} /> 
+                                {/* <label>Quantity</label>
+                                <input type='number' min='1' max='10' value={quantity} onChange={event => setQuantity(event.target.value)} />  */}
                                 
                                 {isCart ? 
                                     <div className={classes.CartButtons}>

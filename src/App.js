@@ -13,9 +13,10 @@ import Shop from './UserRoutes/Shop/Shop';
 import ProductDetail from './UserRoutes/ProductDetails/Productdetails';
 import Contact from './UserRoutes/Contact/Contact';
 import Cart from './UserRoutes/Cart/Cart';
+import Home from './UserRoutes/Home/Home';
 
 const App = () => {
-  
+
   return (
     <div className={classes.App}>
       <Switch>
@@ -26,10 +27,15 @@ const App = () => {
         <Route exact path="/admin/manage" component={ManageProducts} />
         <Route exact path="/admin/edit-product/:id" component={EditProduct} />
 
+        <Route exact path="/shop/top" component={Shop} />
+        <Route exact path="/shop/bottom" component={Shop} />
+        <Route exact path="/shop/dress" component={Shop} />
         <Route exact path="/shop" component={Shop} />
+
         <Route exact path="/shop/:id" component={ProductDetail} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/cart" component={Cart} />
+        <Route exact path="/" component={Home} />
       </Switch>
     </div>
   );

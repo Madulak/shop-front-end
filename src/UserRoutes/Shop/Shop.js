@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './Shop.module.css';
 
 import Container from '../../Container/User/UserContainer';
@@ -7,21 +7,29 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Image from '../../Components/Admin/Image/Image';
 import { NavLink } from 'react-router-dom';
-import Newsletter from '../../Components/User/Newsletter/Newsletter';
 
-const Shop = (props) => {
+const Shop = React.memo((props) => {
 
     const url = 'http://localhost:8080/'
     const dispatch = useDispatch();
     const products = useSelector(state => state.userProduct.products);
+    
+
+    const path = props.location.pathname;
+
 
     useEffect(() => {
-        dispatch(productActions.all_products())
-    },[])
-
-    useEffect(() => {
-
-    },[products])
+        if (path === '/shop') {
+            dispatch(productActions.all_products())
+        } else if (path === '/shop/top') {
+            dispatch(productActions.get_top())
+        } else if (path === '/shop/bottom') {
+            dispatch(productActions.get_bottom()) 
+        } else if (path === '/shop/dress') {
+            dispatch(productActions.get_dress());
+            
+        }
+    },[ path, dispatch, ])
 
     const productDetailHandler = (id) => {
         props.history.push('/shop/'+id)
@@ -31,14 +39,14 @@ const Shop = (props) => {
         <Container>
             <div className={classes.Shop}>
                 <div className={classes.Categories}>
-                    <span>All </span> |
-                    <span>Top </span> |
-                    <span>bottom </span> |
-                    <span>Dress</span>
+                    <span><NavLink className={classes.Link} exact activeStyle={{color: 'grey'}} to='/shop'>All</NavLink> </span> |
+                    <span><NavLink className={classes.Link} activeStyle={{color: 'grey'}} to='/shop/top'>Top</NavLink> </span> |
+                    <span><NavLink className={classes.Link} activeStyle={{color: 'grey'}} to='/shop/bottom'>bottom</NavLink> </span> |
+                    <span><NavLink className={classes.Link} exact activeStyle={{color: 'grey'}} to='/shop/dress'>Dress</NavLink></span>
                 </div>
 
                 <div className={classes.Products}>
-                    {!products ? 'Loading...' : products.map(key => (
+                    {!products? 'Loading...' : products.map(key => (
                         <div onClick={() => productDetailHandler(key._id)} className={classes.Product} key={key._id}>
                             <Image className={classes.Image} imageUrl={url+key.imageUrl} />
                             <div className={classes.ProductDetails}>
@@ -50,10 +58,12 @@ const Shop = (props) => {
                             </div>
                         </div>
                     ))}
+
+                    
                 </div>
             </div>
         </Container>
     );
-}
+})
 
 export default Shop;

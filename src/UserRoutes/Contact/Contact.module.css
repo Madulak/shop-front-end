@@ -7,6 +7,12 @@
     justify-content: center;
 }
 
+.Contact .ContactInfo .Form {
+    background-color: rgb(228, 228, 228);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
 .Contact .ContactInfo .Form form {
     display: flex;
     flex-direction: column;
@@ -17,5 +23,13 @@
 }
 
 .Contact .ContactInfo .Form form input {
-    margin: 10px 0;
+    margin: 10px 3px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 2rem;
+    padding-left: 5px;
+}
+
+.Contact .ContactInfo .Form form textarea {
+    margin: .7rem 0
 }

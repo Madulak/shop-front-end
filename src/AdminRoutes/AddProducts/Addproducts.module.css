@@ -1,7 +1,7 @@
 .Addproducts {
     flex: 4;
     width: 100%;
-    
+    margin-left: 18%;
 }
 
 .Addproducts .Form {
@@ -19,5 +19,9 @@
 }
 
 .Addproducts .Form form input {
+    margin: 10px 0;
+}
+
+.Addproducts .Form form select {
     margin: 10px 0;
 }

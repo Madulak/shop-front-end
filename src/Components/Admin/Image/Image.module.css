@@ -1,7 +1,7 @@
 .Image {
     width: 15rem;
     height: 15rem;
-    
+    background-color: gray;
 }
 
 .Image img {
@@ -11,6 +11,7 @@
     object-fit: cover;
     overflow: hidden;
     transition: transform 0.5s;
+    background-color: gray;
 }
 
 .Image img:hover {

@@ -1,5 +1,7 @@
 .Editproduct {
     flex: 4;
+    position: relative;
+    margin-left: 18%;
 }
 
 .Editproduct .Product {

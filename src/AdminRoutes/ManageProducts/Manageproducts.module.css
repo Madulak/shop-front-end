@@ -1,5 +1,7 @@
 .Manageproducts {
     flex: 4;
+    position: relative;
+    margin-left: 18%;
 }
 
 .Manageproducts .Products {
@@ -11,7 +13,7 @@
     margin: 5px;
     box-shadow: 0 2px 4px black;
     padding: 20px 10px;
-    width: 15rem
+    width: 15rem;
 }
 
 .Manageproducts .Products .Product:hover {

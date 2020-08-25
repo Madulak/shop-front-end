@@ -5,6 +5,7 @@
     background-color: rgb(250, 250, 250);
     height: 100%;
     padding: 0 2rem;
+    position: fixed;
 }
 
 .Toolbar .BrandName {
