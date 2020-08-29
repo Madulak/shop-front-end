@@ -55,6 +55,7 @@ export const get_three = () => {
             console.log(response);
         } catch(error) {
             console.log(error);
+            throw new Error(error);
         }
 
         dispatch({type: GET_THREE, product3: response.data.data})

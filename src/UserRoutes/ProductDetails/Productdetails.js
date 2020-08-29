@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import classes from './Productdetails.module.css';
 
 import Container from '../../Container/User/UserContainer';
-import Backdrop from '../../Components/User/Backdrop/Backdrop';
 import Login from '../../Components/User/Auth/Login/Login';
 import Signup from '../../Components/User/Auth/Signup/Signup';
 
 import * as productActions from '../../store/actions/userActions/productActions';
 import * as cartActions from '../../store/actions/userActions/userCartActions';
 import { useDispatch, useSelector } from 'react-redux';
+import { Modal } from '@material-ui/core';
 
 const Productdetails = (props) => {
     
@@ -16,7 +16,6 @@ const Productdetails = (props) => {
     const productId = props.match.params.id;
     const dispatch = useDispatch();
     
-    const [closeBack, setCloseBack] = useState(true);
     const [backdrop, setBackdrop] = useState(false);
     const [isLogin, setIsLogin] = useState(true);
     const [isCart, setIsCart] = useState(false);
@@ -30,7 +29,8 @@ const Productdetails = (props) => {
         dispatch(productActions.get_single_product(productId));
     },[isToken,isCart,backdrop])
 
-    console.log(isToken)
+    console.log(isToken);
+    
 
     const backdropHandler = (event) => {
         event.preventDefault();
@@ -65,11 +65,15 @@ const Productdetails = (props) => {
     
     return (
         <Container style={backdrop ? {position: 'fixed'}: null} >
-            {backdrop ? <Backdrop backdrop={backdropHandler}>
-                {isLogin ? <Signup click={isLoginHandler} /> : 
-                <Login isCart={() => setIsCart(state => !state.isCart)} click={isLoginHandler} />}
+            
+                {backdrop ? 
                 
-            </Backdrop> 
+                <Modal open={backdrop} onClose={backdropHandler}
+                    style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    {isLogin ? <Signup click={isLoginHandler} /> : 
+                    <Login isCart={() => setIsCart(state => !state.isCart)} click={isLoginHandler} />}
+                </Modal>
+            
             
             : ''}
             <div  className={classes.Productdetails}>

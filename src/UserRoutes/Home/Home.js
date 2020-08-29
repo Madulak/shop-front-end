@@ -24,12 +24,12 @@ const Home = () => {
         <Container>
             <div className={classes.Home}>
                 <div className={classes.NewIn}>
-                    <h2>New In</h2>
+                    <h2 className={classes.NewInText}>New In</h2>
                     <NavLink className={classes.ShopNow} to='/shop'>Shop Now</NavLink>
                 </div>
                 <div className={classes.Shop}>
                      {products ? products.map(key => (
-                        <NavLink key={key._id} exact to={'/shop/'+key._id}><div className={classes.Product} >
+                        <NavLink className={classes.NavLink} key={key._id} exact to={'/shop/'+key._id}><div className={classes.Product} >
                             <div className={classes.Image}>
                                 <img src={url+key.imageUrl} />
                             </div>

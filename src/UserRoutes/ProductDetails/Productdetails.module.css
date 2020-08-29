@@ -70,3 +70,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 500px) {
+    .Productdetails .Product {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

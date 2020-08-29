@@ -54,7 +54,7 @@ const Shop = React.memo((props) => {
                                 <p><span>price: </span>R {key.price}.00</p>
                             </div>
                             <div className={classes.Morebutton}>
-                                <button>Quick View</button>
+                                {/* <button>Quick View</button> */}
                             </div>
                         </div>
                     ))}

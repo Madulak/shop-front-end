@@ -5,6 +5,11 @@
     justify-content: center;
     height: auto;
     flex-direction: column; 
+    margin: 3rem 0;
+}
+
+.Newsletter .SocialMedia {
+    text-align: center;
 }
 
 .Newsletter .Form form input {
@@ -17,4 +22,30 @@
     background-color: black;
     color: white;
     border: 1px solid black;
+    
+}
+
+
+
+@media screen and (max-width: 480px) {
+    
+    .Newsletter .Form {
+        width: 80%;
+        
+    }
+
+    .Newsletter .Form form input {
+        border: 1px solid black;
+        height: 2rem;
+        width: 60%;
+    }
+    
+    .Newsletter .Form form button {
+        height: 2.25rem;
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        width: 35%;
+        
+    }
 }

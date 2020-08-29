@@ -1,9 +1,13 @@
 .Signup {
     padding: 1rem;
     background-color: white;
-    margin-top: -15rem;
+    /* margin-top: -15rem; */
     transition: 2s ease-in-out;
     border-radius: 5px;
+}
+
+.Signup h3,p {
+    color:  rgb(146, 146, 146);
 }
 
 .Signup .Form form {

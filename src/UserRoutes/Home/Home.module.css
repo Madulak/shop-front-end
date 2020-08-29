@@ -8,6 +8,10 @@
     margin: 2.5rem 0;
 }
 
+.Home .NewInText {
+    color: rgb(122, 121, 121);
+}
+
 .Home .NewIn .ShopNow {
     background-color: gray;
     padding: .0rem .6rem;
@@ -17,9 +21,20 @@
     color: white;
 }
 
+.Home .NewIn .ShopNow:hover {
+    color: #72ed87;
+    transition: .4s ease-in-out;
+}
+
 .Home .Shop {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Home .Shop .NavLink {
+    color: rgb(122, 121, 121);
+    text-decoration: none;
 }
 
 .Home .Shop .Product {
@@ -34,4 +49,60 @@
     width: 15rem;
     height: 15rem;
     object-fit: cover;
+}
+
+@media screen and (max-width: 480px) {
+    
+    .Home .NewIn h2 {
+        display: none;
+    }
+
+    .Home {
+        padding: 0 2rem;
+    }
+    
+    .Home .NewIn {
+        justify-content: flex-end;
+        margin: 2.5rem 0;
+    }
+    
+    .Home .NewInText {
+        color: rgb(122, 121, 121);
+    }
+    
+    .Home .NewIn .ShopNow {
+        
+        color: white;
+        height: 3rem;
+    }
+    
+    .Home .NewIn .ShopNow:hover {
+        color: #72ed87;
+        transition: .4s ease-in-out;
+    }
+    
+    .Home .Shop {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .Home .Shop .NavLink {
+        color: rgb(122, 121, 121);
+        text-decoration: none;
+    }
+    
+    .Home .Shop .Product {
+        margin: 0 1rem;
+    }
+    
+    .Home .Shop .Product .Image {
+        width: 15rem;
+    }
+    
+    .Home .Shop .Product .Image img {
+        width: 15rem;
+        height: 15rem;
+        object-fit: cover;
+    }
 }

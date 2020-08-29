@@ -1,6 +1,5 @@
 .Shop {
     padding: 1rem 7rem;
-    position: relative;
 }
 
 
@@ -25,7 +24,7 @@
 
 .Shop .Products {
     display: flex;
-    position: relative;
+    /* position: relative; */
     width: 100%;
     height: auto;
     flex-wrap: wrap;
@@ -38,7 +37,7 @@
     border: 1px solid grey;
     overflow: hidden;
     box-sizing: border-box;
-    position: relative;
+    /* position: relative; */
     opacity: 1;
     display: block;
     
@@ -103,3 +102,110 @@
 }
 
 
+@media screen and (max-width: 480) {
+    .Shop {
+        padding: 1rem 1rem;
+    }
+    
+    
+    .Shop .Categories {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+    }
+    
+    .Shop .Categories span {
+        margin: 0 5px;
+        padding: 5px;
+    }
+    
+    .Shop .Categories .Link {
+        text-decoration: none;
+        color: black;
+        padding: 5px;
+        margin: 0 .3rem;
+    }
+    
+    .Shop .Products {
+        display: flex;
+        /* position: relative; */
+        /* width: 100%; */
+        height: auto;
+        flex-wrap: wrap;
+    }
+    
+    .Shop .Products .Product {
+        width: 15rem;
+        height: auto;
+        margin: 10px;
+        border: 1px solid grey;
+        overflow: hidden;
+        box-sizing: border-box;
+        /* position: relative; */
+        opacity: 1;
+        /* display: block; */
+        
+        box-shadow: 0 2px 4px black;
+    }
+    
+    .Shop .Products .Product .Image {
+        /* height: 10rem;
+        width: 10rem;
+        backface-visibility: hidden; */
+    }
+    
+    .Shop .Products .Product .ProductDetails {
+        padding: 5px 20px;
+    }
+    
+    .Shop .Products .Product .Title {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 18px;
+    }
+    
+    .Shop .Products .Product span {
+        font-size: 12px;
+        color: grey;
+        font-family: sans-serif;
+    }
+    
+    
+    .Shop .Products .Product .Morebutton {
+        position: absolute;
+        top: 45%;
+        left: 30%;
+        /* width: 100%;
+        height: 100%; */
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        /* background-color: lightslategrey; */
+    }
+    
+    .Shop .Products .Product .Morebutton button {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .Shop .Products .Product:hover .Morebutton {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    .Shop .Products .Product:hover {
+        opacity: 0.8;
+        /* box-shadow: ; */
+        cursor: pointer;
+        box-shadow: 0px 0px 7px black;
+    }
+    
+    
+}

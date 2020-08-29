@@ -1,16 +1,21 @@
 const { GET_CART } = require("../../actions/userActions/userCartActions")
 
 const initialState = {
-    cart: []
+    cart: [],
+    totalCart: 0
 }
 
 const cartReducer = (state = initialState, action) => {
+    console.log(action.totalPrice);
     switch (action.type) {
         case GET_CART:
+            
             return {
                 ...state,
-                cart: action.cart
+                cart: action.cart,
+                totalCart: action.totalPrice
             }
+        
         default: 
             return state
     }

@@ -15,3 +15,10 @@
 .Toolbar .Link:hover {
     color: rgb(212, 212, 212);
 }
+
+@media screen and (max-width: 480px) {
+    
+    .Toolbar .Link {
+        display: none;
+    }
+}

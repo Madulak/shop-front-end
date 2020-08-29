@@ -1,5 +1,4 @@
-import React from 'react';
-import classes from './App.module.css';
+import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router';
 
 import Dashboard from './AdminRoutes/Dashboard/Dashboard';
@@ -15,29 +14,39 @@ import Contact from './UserRoutes/Contact/Contact';
 import Cart from './UserRoutes/Cart/Cart';
 import Home from './UserRoutes/Home/Home';
 
+import NotFound from './Components/404/404';
+
+import { useSelector } from 'react-redux';
+
 const App = () => {
 
+  const adminAuth = useSelector(state => state.auth.token);
+  
   return (
-    <div className={classes.App}>
       <Switch>
-        <Route exact path='/admin/login' component={Login} />
-        <Route exact path="/admin/signup" component={Signup} /> 
-        <Route exact path="/admin/dashboard" component={Dashboard} />
-        <Route exact path="/admin/add-product" component={AddProduct} />
-        <Route exact path="/admin/manage" component={ManageProducts} />
-        <Route exact path="/admin/edit-product/:id" component={EditProduct} />
+          <Route exact path="/shop/top" component={Shop} />
+          <Route exact path="/shop/bottom" component={Shop} />
+          <Route exact path="/shop/dress" component={Shop} />
+          <Route exact path="/shop" component={Shop} />
 
-        <Route exact path="/shop/top" component={Shop} />
-        <Route exact path="/shop/bottom" component={Shop} />
-        <Route exact path="/shop/dress" component={Shop} />
-        <Route exact path="/shop" component={Shop} />
+          <Route exact path="/shop/:id" component={ProductDetail} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/cart" component={Cart} /> 
+          <Route exact path="/" component={Home} />
+          
 
-        <Route exact path="/shop/:id" component={ProductDetail} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/cart" component={Cart} />
-        <Route exact path="/" component={Home} />
+          {adminAuth == null ? <Route exact path='/admin/login' component={Login} /> :
+          <Fragment>
+              <Route exact path="/admin/signup" component={Signup} /> 
+              <Route exact path="/admin/dashboard" component={Dashboard} />
+              <Route exact path="/admin/add-product" component={AddProduct} />
+              <Route exact path="/admin/manage" component={ManageProducts} />
+              <Route exact path="/admin/edit-product/:id" component={EditProduct} /> 
+          </Fragment>
+          }
+
+          <Route component={NotFound} />
       </Switch>
-    </div>
   );
 }
 

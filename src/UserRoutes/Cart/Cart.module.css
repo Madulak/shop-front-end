@@ -1,19 +1,57 @@
 .Cart {
-    padding: 0 10px;
+    padding: 0 1rem;
+    color: grey;
 }
 
 .Cart .CheckoutContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+}
+
+.Cart .CheckoutContainer .Checkout {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    align-items: center;
+}
+
+.Cart .CheckoutContainer .CheckoutButton {
+    background-color: rgb(168, 248, 168);
+    height: 2rem;
+    border-radius: 10px;
+}
+
+.Cart .CheckoutContainer .CheckoutButton:hover {
+    cursor: pointer;
+    background-color: rgb(118, 209, 118);
+    transition: .5s ease-in-out;
+    color: white;
 }
 
 .Cart .CartItems {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.Cart .CartItems .CartItem {
+    margin: 0 1rem;
 }
 
 .Cart .Image img {
     width: 15rem;
     height: 15rem;
-    object-fit: contain;
+    object-fit: cover;
+}
+
+.Cart .CartItems button {
+    background-color: rgb(240, 132, 132);
+    border: white 0 solid;
+    text-align: center;
+}
+
+.Cart .CartItems button:hover {
+    cursor: pointer;
 }
